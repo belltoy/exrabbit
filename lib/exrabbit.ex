@@ -182,7 +182,7 @@ defmodule Exrabbit.Utils do
 	end
 
 	def declare_exchange(channel, exchange) do
-		exchange_declare_ok() = :amqp_channel.call channel, exchange.declare(exchange: exchange, type: "fanout", auto_delete: true)
+		exchange_declare_ok() = :amqp_channel.call channel, exchange_declare(exchange: exchange, type: "fanout", auto_delete: true)
 		exchange
 	end
 	
